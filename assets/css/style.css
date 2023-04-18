@@ -242,7 +242,7 @@ input[type="submit"]:hover {
   right: 0;
   width: 205px;
   height: 107px;
-  background-image: url('assets/img/roof-vector.svg');
+  background-image: url('../assets/img/roof-vector.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
