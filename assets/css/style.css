@@ -340,7 +340,7 @@ input[type="submit"]:hover {
 }
 
 .hero-image-placeholder {
-  background-image: url('/assets/img/hero-image-placeholder.png');
+  background-image: url('../img/hero-image-placeholder.png');
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -602,15 +602,15 @@ input[type="submit"]:hover {
 }
 
 .about-us-gallery-image1 {
-  background-image: url('/assets/img/about-us-gallery-placeholder.png');
+  background-image: url('../img/about-us-gallery-placeholder.png');
 }
 
 .about-us-gallery-image2 {
-  background-image: url('/assets/img/about-us-gallery-placeholder1.png');
+  background-image: url('../img/about-us-gallery-placeholder1.png');
 }
 
 .about-us-gallery-image3 {
-  background-image: url('/assets/img/about-us-gallery-placeholder2.png');
+  background-image: url('../img/about-us-gallery-placeholder2.png');
 }
 
 /* ----------------------------- */
@@ -641,19 +641,19 @@ input[type="submit"]:hover {
 }
 
 .services-gallery-image1 {
-  background-image: url('/assets/img/services-gallery-placeholder.png');
+  background-image: url('../img/services-gallery-placeholder.png');
 }
 
 .services-gallery-image2 {
-  background-image: url('/assets/img/services-gallery-placeholder1.png');
+  background-image: url('../img/services-gallery-placeholder1.png');
 }
 
 .services-gallery-image3 {
-  background-image: url('/assets/img/services-gallery-placeholder2.png');
+  background-image: url('../img/services-gallery-placeholder2.png');
 }
 
 .services-gallery-image4 {
-  background-image: url('/assets/img/services-gallery-placeholder3.png');
+  background-image: url('../img/services-gallery-placeholder3.png');
 }
 
 
