@@ -1,0 +1,930 @@
+/** STYLE.CSS **/
+
+/* -------- OUTLINE -----------
+  
+  VARIABLES
+  DEFAULTS
+  GENERAL
+  NAVIGATION SECTION
+  HEADER SECTION
+  FOOTER SECTION
+  FORM SECTIONS
+  ABOUT US SECTION
+  SERVICES SECTION
+  PROJECTS SECTION
+  MEDIA QUERIES
+
+-------- end of OUTLINE ----------- */
+
+
+/* ----------------------------- */
+/**** VARIABLES ****/
+/* ----------------------------- */
+
+:root {
+
+  /***** COLORS *****/
+
+  --body-background: #FFFBFA;
+  --form-background: #1B1B1B;
+  --cta-background: #A32C00;
+  --cta-background-hover: hsl(16, 97%, 25%);
+  --decoration: #D73A01;
+  --black: #1B1B1B;
+  --white: #FFFBFA;
+  --overlay: hsla(0, 0%, 0%, 70%);
+
+  /***** TYPOGRAPHY *****/
+
+  /* font family */
+
+  --font-family: 'Assistant', sans-serif;
+
+  /* font sizes */
+
+  --h1-clamp: clamp(4.4rem, 3.485rem + 2.441vw, 7rem);
+  --h2-clamp: clamp(3rem, 2.296rem + 1.878vw, 5rem);
+  --h3-clamp: 2.5rem;
+  --h4-clamp: clamp(2.2rem, 1.296rem + 1.878vw, 3.5rem);
+  --subheading-clamp: clamp(2.5rem, 1.972rem + 1.408vw, 4rem);
+  --p-large: 2.5rem;
+  --p-regular: 2rem;
+  --cta: 1.8rem;
+  --placeholder: 1.6rem;
+
+  /* font-weights */
+
+  --regular: 400;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+
+  /* layouts */
+
+  --side-padding-mobile: 4rem;
+  --side-padding-tablet: 8rem;
+  --side-padding-desktop: 18rem;
+}
+
+/* ----------------------------- */
+/**** DEFAULTS ****/
+/* ----------------------------- */
+
+body {
+  background-color: var(--body-background);
+  font-family: var(--font-family);
+  color: var(--black);
+}
+
+h1 {
+  font-size: var(--h1-clamp);
+  font-weight: var(--extra-bold);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--h2-clamp);
+  text-transform: uppercase;
+  font-weight: var(--extra-bold);
+  color: var(--decoration);
+}
+
+h3 {
+  font-size: var(--h3-clamp);
+}
+
+h4 {
+  font-size: var(--h4-clamp);
+}
+
+p {
+  font-size: var(--p-regular);
+  font-weight: var(--regular);
+}
+
+strong {
+  font-size: var(--p-regular);
+}
+
+hr {
+  border: none;
+  height: .4rem;
+  background-color: var(--decoration);
+}
+
+form {
+  color: var(--white);
+}
+
+label {
+  font-size: var(--p-regular);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+}
+
+input {
+  min-height: 5rem;
+  border-radius: 0.2rem;
+  color: var(--overlay);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  font-size: var(--p-regular);
+  padding-left: 1.6rem;
+}
+
+input[type="submit"] {
+  font-size: var(--cta);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--cta-background);
+  color: var(--white);
+  padding: 1.2rem 2rem;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--cta-background-hover);
+}
+
+/* ----------------------------- */
+/**** GENERAL ****/
+/* ----------------------------- */
+
+/* page layouts */
+
+.wrapper {
+  margin: 0 4rem;
+}
+
+.section {
+  margin: 0 -4rem;
+}
+
+/* section backgrounds */
+
+.nav-bg {
+  background-color: var(--white);
+}
+
+/* .header-bg {
+  background-color: var(--white); 
+} */
+/* // Turn this off as a comment if you want to turn on and change the color of the header background // */
+
+.about-us-bg,
+.services-bg,
+.projects-bg {
+  background-color: var(--white);
+}
+
+.form-bg,
+.footer-bg {
+  background-color: var(--form-background);
+}
+
+/* text layouts */
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* form layouts */
+
+.input-field-layout {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  flex: 1;
+}
+
+/* gallery images */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.gallery-placeholder {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rectangle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 26%;
+  background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.vector {
+  position: absolute;
+  bottom: -2%;
+  right: 0;
+  width: 205px;
+  height: 107px;
+  background-image: url('/assets/img/roof-vector.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.title {
+  position: absolute;
+  margin: 2rem 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ----------------------------- */
+/**** NAVIGATION SECTION ****/
+/* ----------------------------- */
+
+.navigation-layout {
+  padding: 3rem var(--side-padding-mobile);
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "logo"
+    "social"
+    "contact"
+  ;
+}
+
+.navigation-layout .logo {
+  grid-area: logo;
+}
+
+.navigation-layout .social-icons-layout {
+  grid-area: social;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social-icons-layout img {
+  min-width: 2.8rem;
+}
+
+/* Turn these classes below off as a comment if you want to turn on and change the color of the icons */
+
+/* .whatsapp img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+/* .instagram {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+/* .facebook {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+.navigation-layout .cta-btn {
+  grid-area: contact;
+  font-size: var(--cta);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--cta-background);
+  color: var(--white);
+  padding: 0.5rem 1.8rem;
+  border-radius: 0.2rem;
+}
+
+.navigation-layout .cta-btn:hover {
+  background-color: var(--cta-background-hover);
+}
+
+
+/* ----------------------------- */
+/**** HEADER SECTION ****/
+/* ----------------------------- */
+
+.header-layout {
+  padding: 10rem var(--side-padding-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  position: relative;
+}
+
+.hero-image-placeholder {
+  background-image: url('/assets/img/hero-image-placeholder.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.header-row1 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: var(--white);
+}
+
+.hero-title {
+  font-weight: var(--extra-bold);
+}
+
+.hero-subtitle {
+  font-size: var(--p-large);
+  font-weight: var(--semi-bold);
+}
+
+.header-row2 {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.hero-paragraph {
+  color: var(--white);
+  font-weight: var(--semi-bold);
+}
+
+.hero-form-layout {
+  display: grid;
+  grid-template-areas:
+    "name"
+    "phone"
+    "message"
+    "submit"
+  ;
+  gap: 3rem;
+}
+
+.hero-form-layout .name {
+  grid-area: name;
+}
+
+.hero-form-layout .phone {
+  grid-area: phone;
+}
+
+.hero-form-layout .message {
+  grid-area: message;
+}
+
+.hero-form-layout .submit-btn {
+  grid-area: submit;
+}
+
+
+.header-row3 {
+  margin: 0 auto;
+  width: 10rem;
+}
+
+/* .hero-logo {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the logo file */
+
+
+/* ----------------------------- */
+/**** FOOTER SECTION ****/
+/* ----------------------------- */
+
+.footer-layout {
+  padding: 5rem var(--side-padding-mobile);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4rem;
+}
+
+.footer-row1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+}
+
+/* .footer-row2 {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the footer row 2 */
+
+.footer-row3 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+}
+
+.footer-form-layout {
+  display: grid;
+  grid-template-areas:
+    "name"
+    "email"
+    "subscribe"
+  ;
+  gap: 3rem;
+}
+
+.footer-form-layout .name {
+  grid-area: name;
+}
+
+.footer-form-layout .email {
+  grid-area: email;
+}
+
+.footer-form-layout .submit-btn {
+  grid-area: subscribe;
+}
+
+.logo-social-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .logo-social-layout .footer-logo {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the logo file in footer */
+
+.logo-social-layout .social-icons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.logo-social-layout .social-icons img {
+  min-width: 2.8rem;
+}
+
+.phone-email-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-email-layout .layout {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.phone-email-layout .layout a {
+  font-size: var(--p-regular);
+  color: var(--white);
+}
+
+.phone-email-layout .layout a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----------------------------- */
+/**** FORM SECTIONS ****/
+/* ----------------------------- */
+
+.form-one-layout,
+.form-two-layout {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.form-row1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+}
+
+/* Turn these classes below off as a comment if you want to turn on and make changes. */
+
+/* .form-title {
+
+} */
+
+/* .form-subtitle {
+
+} */
+
+/* .form-row2 {
+
+} */
+
+.form-layout {
+  display: grid;
+  grid-template-areas:
+    "name"
+    "phone"
+    "message"
+    "submit"
+  ;
+  gap: 3rem;
+}
+
+.form-layout .name {
+  grid-area: name;
+}
+
+.form-layout .phone {
+  grid-area: phone;
+}
+
+.form-layout .message {
+  grid-area: message;
+}
+
+.form-layout .submit-btn {
+  grid-area: submit;
+}
+
+
+/* ----------------------------- */
+/**** ABOUT US SECTION ****/
+/* ----------------------------- */
+
+.about-us-layout {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* .about-us-title {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the title. Mind check the defaults section in this file before making any changes here */
+
+/* .about-us-paragraph {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the pharagraph. Mind check the defaults section in this file before making any changes here */
+
+.about-us-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-us-gallery-image1 {
+  background-image: url('/assets/img/about-us-gallery-placeholder.png');
+}
+
+.about-us-gallery-image2 {
+  background-image: url('/assets/img/about-us-gallery-placeholder1.png');
+}
+
+.about-us-gallery-image3 {
+  background-image: url('/assets/img/about-us-gallery-placeholder2.png');
+}
+
+/* ----------------------------- */
+/**** SERVICES SECTION ****/
+/* ----------------------------- */
+
+.services-layout {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* .services-title {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the title. Mind check the defaults section in this file before making any changes here */
+
+/* .services-paragraph {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the paragraph. Mind check the defaults section in this file before making any changes here */
+
+.services-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.services-gallery-image1 {
+  background-image: url('/assets/img/services-gallery-placeholder.png');
+}
+
+.services-gallery-image2 {
+  background-image: url('/assets/img/services-gallery-placeholder1.png');
+}
+
+.services-gallery-image3 {
+  background-image: url('/assets/img/services-gallery-placeholder2.png');
+}
+
+.services-gallery-image4 {
+  background-image: url('/assets/img/services-gallery-placeholder3.png');
+}
+
+
+/* ----------------------------- */
+/**** PROJECTS SECTION ****/
+/* ----------------------------- */
+
+.projects-layout {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* .projects-title {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the title. Mind check the defaults section in this file before making any changes here */
+
+/* .projects-paragraph {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the paragraph. Mind check the defaults section in this file before making any changes here */
+
+.video-placeholder {
+  margin: 5rem 0 3rem;
+}
+
+.projects-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.projects-gallery-layout {
+  position: relative;
+  width: 400%;
+  margin: 0;
+  padding: 0;
+  -webkit-animation: slide 10s infinite;
+  animation: slide 10s infinite;
+}
+
+.projects-gallery-layout li {
+  position: relative;
+  width: 25%;
+  float: left;
+}
+
+.projects-gallery-layout img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+
+/* ----------------------------- */
+/**** MEDIA QUERIES ****/
+/* ----------------------------- */
+
+/* TABLET */
+
+@media screen and (min-width:768px) {
+  .wrapper {
+    margin: 0 8rem;
+  }
+
+  .section {
+    margin: 0 -8rem;
+  }
+
+  .navigation-layout {
+    padding: 3rem var(--side-padding-tablet)
+  }
+
+  .header-layout {
+    padding: 10rem var(--side-padding-tablet)
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    text-align: center;
+  }
+
+  .hero-form-layout,
+  .form-layout {
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(2 1fr);
+    grid-template-areas:
+      "name phone message"
+      "submit submit submit"
+    ;
+    gap: 3rem;
+  }
+
+  .form-one-layout,
+  .form-two-layout,
+  .about-us-layout,
+  .services-layout,
+  .projects-layout,
+  .footer-layout {
+    padding: 5rem var(--side-padding-tablet)
+  }
+
+  .about-us-gallery,
+  .services-gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .about-us-gallery .image-container {
+    flex: 30%;
+  }
+
+  .services-gallery .image-container {
+    flex: 40%;
+  }
+
+  .footer-form-layout {
+    grid-template-areas:
+      "name email subscribe"
+    ;
+    gap: 3rem;
+    align-items: end;
+  }
+
+  .footer-row3 {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5rem;
+  }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width:1440px) {
+  .wrapper {
+    margin: 0 18rem;
+  }
+
+  .section {
+    margin: 0 -18rem;
+  }
+
+  .navigation-layout {
+    padding: 3rem 5rem;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-areas:
+      "social logo contact"
+    ;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .header-layout {
+    padding: 10rem var(--side-padding-desktop);
+  }
+
+  .header-row2 {
+    flex-direction: row;
+    max-width: 940px;
+    margin: 0 auto;
+  }
+
+  .hero-form-layout {
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: repeat(3 1fr);
+    grid-template-areas:
+      "name phone"
+      "message message"
+      "submit submit"
+    ;
+    gap: 2rem;
+  }
+
+  .form-layout {
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "name phone message submit"
+    ;
+    align-items: end;
+    gap: 3rem;
+  }
+
+  .form-one-layout,
+  .form-two-layout,
+  .about-us-layout,
+  .services-layout,
+  .projects-layout,
+  .footer-layout {
+    padding: 5rem var(--side-padding-desktop);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,84 @@
+/** RESET.CSS **/
+
+/* -------- OUTLINE -----------
+  
+  Box sizing
+  Typography
+  Content
+  Image
+  List
+  Anchor
+  Interaction
+  Scroll behavior
+
+-------- end of OUTLINE ----------- */
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Typography reset */
+
+* {
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+/* Content reset */
+
+html{
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+body {
+  overflow-wrap: break-word;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Image reset */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* List reset */
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* Anchor reset */
+
+a, a:hover, a:focus, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Interaction reset */
+
+input,
+button,
+textarea,
+select {
+  display: inline-block;
+  font: inherit;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}

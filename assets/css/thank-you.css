@@ -1,0 +1,538 @@
+/** THANK-YOU.CSS **/
+
+/* -------- OUTLINE -----------
+  
+  VARIABLES
+    colors
+    typography
+      font-family
+      font sizes
+      font weights
+      layouts
+
+  DEFAULTS
+    body
+    h1
+    h2
+    p
+    strong
+    hr
+    form
+    label
+    input
+
+  GENERAL
+    page layouts
+    section backgrounds
+    text layouts
+    form layouts
+
+  NAVIGATION SECTION
+    navigation layout
+    navigation layout .logo
+    navigation layout .social icons layout
+    navigation layout img
+    whatsapp
+    instagram
+    facebook
+    navigation layout .cta button
+    navigation layout .cta button:hover
+  
+  HEADER SECTION
+    header layout
+    hero image placeholder
+      header row
+        hero title
+        hero subtitle
+
+  FOOTER SECTION
+    footer layout
+      footer row 1
+        footer title
+      footer row 2
+        footer form layout
+          footer form layout .name
+          footer form layout .phone
+          footer form layout .email
+          footer form layout .submit-button
+      footer row 3
+        logo social layout
+          logo social layout .footer logo
+          logo social layout .social icons
+          logo social layout .social icons image
+        phone email layout
+          phone email layout .layout
+          phone email layout .layout a
+          phone email layout .layout a:hover
+
+  MEDIA QUERIES
+    tablet 768
+      wrapper
+      section
+      navigation layout
+      header layout
+      footer layout
+      footer form layout
+      footer row 3
+
+    desktop 1440
+      wrapper
+      section
+      navigation layout
+      header layout
+      header row
+      footer layout
+  
+
+-------- end of OUTLINE ----------- */
+
+
+/* ----------------------------- */
+/**** VARIABLES ****/
+/* ----------------------------- */
+
+:root {
+
+  /***** COLORS *****/
+
+  --body-background: #FFFBFA;
+  --form-background: #1B1B1B;
+  --cta-background: #A32C00;
+  --cta-background-hover: hsl(16, 97%, 25%);
+  --decoration: #D73A01;
+  --black: #1B1B1B;
+  --white: #FFFBFA;
+  --overlay: hsla(0, 0%, 0%, 70%);
+
+  /***** TYPOGRAPHY *****/
+
+  /* font family */
+
+  --font-family: 'Assistant', sans-serif;
+
+  /* font sizes */
+
+  --h1-clamp: clamp(4.4rem, 3.485rem + 2.441vw, 7rem);
+  --h2-clamp: 2.5rem;
+  ;
+  --h3-clamp: 2.5rem;
+  --p-regular: 2rem;
+  --cta: 1.8rem;
+  --placeholder: 1.6rem;
+
+  /* font-weights */
+
+  --regular: 400;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+
+  /* layouts */
+
+  --side-padding-mobile: 4rem;
+  --side-padding-tablet: 8rem;
+  --side-padding-desktop: 18rem;
+}
+
+/* ----------------------------- */
+/**** DEFAULTS ****/
+/* ----------------------------- */
+
+body {
+  background-color: var(--body-background);
+  font-family: var(--font-family);
+  color: var(--black);
+}
+
+h1 {
+  font-size: var(--h1-clamp);
+  font-weight: var(--extra-bold);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--h2-clamp);
+  font-weight: var(--bold);
+  color: var(--white);
+}
+
+p {
+  font-size: var(--p-regular);
+  font-weight: var(--regular);
+}
+
+strong {
+  font-size: var(--p-regular);
+}
+
+hr {
+  border: none;
+  height: 0.4rem;
+  background-color: var(--decoration);
+}
+
+form {
+  color: var(--white);
+}
+
+label {
+  font-size: var(--p-regular);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+}
+
+input {
+  min-height: 5rem;
+  border-radius: 0.2rem;
+  color: var(--overlay);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  font-size: var(--p-regular);
+  padding-left: 1.6rem;
+}
+
+input[type="submit"] {
+  font-size: var(--cta);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--cta-background);
+  color: var(--white);
+  padding: 1.2rem 2rem;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--cta-background-hover);
+}
+
+/* ----------------------------- */
+/**** GENERAL ****/
+/* ----------------------------- */
+
+/* page layouts */
+
+.wrapper {
+  margin: 0 4rem;
+}
+
+.section {
+  margin: 0 -4rem;
+}
+
+/* section backgrounds */
+
+.nav-bg {
+  background-color: var(--white);
+}
+
+/* .header-bg {
+  background-color: var(--white); 
+} */
+/* // Turn this off as a comment if you want to turn on and change the color of the header background // */
+
+.footer-bg {
+  background-color: var(--form-background);
+}
+
+/* text layouts */
+
+.text-center {
+  text-align: center;
+}
+
+/* form layouts */
+
+.input-field-layout {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  flex: 1;
+}
+
+/* ----------------------------- */
+/**** NAVIGATION SECTION ****/
+/* ----------------------------- */
+
+.navigation-layout {
+  padding: 3rem var(--side-padding-mobile);
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+    "logo"
+    "social"
+    "contact"
+  ;
+}
+
+.navigation-layout .logo {
+  grid-area: logo;
+}
+
+.navigation-layout .social-icons-layout {
+  grid-area: social;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.social-icons-layout img {
+  min-width: 2.8rem;
+}
+
+/* Turn these classes below off as a comment if you want to turn on and change the color of the icons */
+
+/* .whatsapp img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+/* .instagram {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+/* .facebook {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+} */
+
+.navigation-layout .cta-btn {
+  grid-area: contact;
+  font-size: var(--cta);
+  font-weight: var(--bold);
+  text-transform: uppercase;
+  background-color: var(--cta-background);
+  color: var(--white);
+  padding: 0.5rem 1.8rem;
+  border-radius: 0.2rem;
+}
+
+.navigation-layout .cta-btn:hover {
+  background-color: var(--cta-background-hover);
+}
+
+
+/* ----------------------------- */
+/**** HEADER SECTION ****/
+/* ----------------------------- */
+
+.header-layout {
+  padding: 10rem var(--side-padding-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  position: relative;
+}
+
+.hero-image-placeholder {
+  background-image: url('/assets/img/image-placeholder.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: var(--white);
+}
+
+.hero-title {
+  font-weight: var(--extra-bold);
+}
+
+.hero-subtitle {
+  font-size: var(--p-regular);
+  font-weight: var(--semi-bold);
+}
+
+/* ----------------------------- */
+/**** FOOTER SECTION ****/
+/* ----------------------------- */
+
+.footer-layout {
+  padding: 5rem var(--side-padding-mobile);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4rem;
+}
+
+.footer-row1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+}
+
+/* .footer-row2 {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the footer row 2 */
+
+.footer-row3 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+}
+
+.footer-form-layout {
+  display: grid;
+  grid-template-areas:
+    "name"
+    "email"
+    "subscribe"
+  ;
+  gap: 3rem;
+}
+
+.footer-form-layout .name {
+  grid-area: name;
+}
+
+.footer-form-layout .email {
+  grid-area: email;
+}
+
+.footer-form-layout .submit-btn {
+  grid-area: subscribe;
+}
+
+.logo-social-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .logo-social-layout .footer-logo {
+
+} */
+/* Turn this off as a comment if you want to turn on and make changes of the logo file in footer */
+
+.logo-social-layout .social-icons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.logo-social-layout .social-icons img {
+  min-width: 2.8rem;
+}
+
+.phone-email-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-email-layout .layout {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.phone-email-layout .layout a {
+  font-size: var(--p-regular);
+  color: var(--white);
+}
+
+.phone-email-layout .layout a:hover {
+  text-decoration: underline;
+}
+
+
+/* ----------------------------- */
+/**** MEDIA QUERIES ****/
+/* ----------------------------- */
+
+/* TABLET */
+
+@media screen and (min-width:768px) {
+  .wrapper {
+    margin: 0 8rem;
+  }
+
+  .section {
+    margin: 0 -8rem;
+  }
+
+  .navigation-layout {
+    padding: 3rem var(--side-padding-tablet)
+  }
+
+  .header-layout {
+    padding: 10rem var(--side-padding-tablet)
+  }
+
+  .footer-layout {
+    padding: 5rem var(--side-padding-tablet)
+  }
+
+  .footer-form-layout {
+    grid-template-areas:
+      "name email subscribe"
+    ;
+    gap: 3rem;
+    align-items: end;
+  }
+
+  .footer-row3 {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5rem;
+  }
+
+}
+
+/* DESKTOP */
+
+@media screen and (min-width:1440px) {
+  
+  .wrapper {
+    margin: 0 18rem;
+  }
+
+  .section {
+    margin: 0 -18rem;
+  }
+
+  .navigation-layout {
+    padding: 3rem 5rem;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-areas:
+      "social logo contact"
+    ;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .header-layout {
+    padding: 10rem var(--side-padding-desktop);
+  }
+
+  .header-row {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-layout {
+    padding: 5rem var(--side-padding-desktop);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
