@@ -1,6 +1,6 @@
 ## Shashon - Advanced Shading Solutions Landing Page Template
 
-![Alt text]( assets/preview/preview_590X300.png "Optional title")
+![Alt text]( assets/preview/github-preview-1180X600.png "Optional title")
 
 Thank you for choosing the **Shashon - Advanced Shading Solutions landing page template**! 
 
@@ -8,7 +8,7 @@ This template is designed to help businesses in the shading solutions industry c
 
 ## Preview
 
-You can view a live preview of the template on our [GitHub Pages site](GitHublink). The live preview is a great way to get a feel for how the template looks and works.
+You can view a live preview of the template on our [GitHub Pages site](https://jollydevblog.github.io/shashon-landing-page-demo/). The live preview is a great way to get a feel for how the template looks and works.
 
 ## Getting Started
 
