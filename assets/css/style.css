@@ -203,8 +203,10 @@ input[type="submit"]:hover {
 
 .input-field-layout {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: .8rem;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -267,6 +269,7 @@ input[type="submit"]:hover {
 
 .navigation-layout {
   padding: 3rem var(--side-padding-mobile);
+  display: -ms-grid;
   display: grid;
   gap: 2rem;
   align-items: center;
@@ -334,6 +337,7 @@ input[type="submit"]:hover {
 .header-layout {
   padding: 10rem var(--side-padding-mobile);
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 5rem;
   position: relative;
@@ -354,6 +358,7 @@ input[type="submit"]:hover {
 
 .header-row1 {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 3rem;
   color: var(--white);
@@ -370,6 +375,7 @@ input[type="submit"]:hover {
 
 .header-row2 {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 7rem;
 }
@@ -380,6 +386,7 @@ input[type="submit"]:hover {
 }
 
 .hero-form-layout {
+  display: -ms-grid;
   display: grid;
   grid-template-areas:
     "name"
@@ -425,13 +432,16 @@ input[type="submit"]:hover {
 .footer-layout {
   padding: 5rem var(--side-padding-mobile);
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex: 1;
   flex: 1;
   gap: 4rem;
 }
 
 .footer-row1 {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
   color: var(--white);
@@ -444,12 +454,14 @@ input[type="submit"]:hover {
 
 .footer-row3 {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
   color: var(--white);
 }
 
 .footer-form-layout {
+  display: -ms-grid;
   display: grid;
   grid-template-areas:
     "name"
@@ -473,6 +485,7 @@ input[type="submit"]:hover {
 
 .logo-social-layout {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -493,6 +506,7 @@ input[type="submit"]:hover {
 
 .phone-email-layout {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -521,12 +535,14 @@ input[type="submit"]:hover {
 .form-two-layout {
   padding: 5rem 4rem;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 4rem;
 }
 
 .form-row1 {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
   color: var(--white);
@@ -547,6 +563,7 @@ input[type="submit"]:hover {
 } */
 
 .form-layout {
+  display: -ms-grid;
   display: grid;
   grid-template-areas:
     "name"
@@ -581,6 +598,7 @@ input[type="submit"]:hover {
 .about-us-layout {
   padding: 5rem 4rem;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
 }
@@ -597,6 +615,7 @@ input[type="submit"]:hover {
 
 .about-us-gallery {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
 }
@@ -620,6 +639,7 @@ input[type="submit"]:hover {
 .services-layout {
   padding: 5rem 4rem;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
 }
@@ -636,6 +656,7 @@ input[type="submit"]:hover {
 
 .services-gallery {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
 }
@@ -664,6 +685,7 @@ input[type="submit"]:hover {
 .projects-layout {
   padding: 5rem 4rem;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 2rem;
 }
@@ -817,7 +839,9 @@ input[type="submit"]:hover {
 
   .hero-form-layout,
   .form-layout {
+    -ms-grid-columns: repeat(3 1fr);
     grid-template-columns: repeat(3 1fr);
+    -ms-grid-rows: repeat(2 1fr);
     grid-template-rows: repeat(2 1fr);
     grid-template-areas:
       "name phone message"
@@ -837,15 +861,18 @@ input[type="submit"]:hover {
 
   .about-us-gallery,
   .services-gallery {
+    -ms-flex-direction: row;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
   .about-us-gallery .image-container {
+    -ms-flex: 30%;
     flex: 30%;
   }
 
   .services-gallery .image-container {
+    -ms-flex: 40%;
     flex: 40%;
   }
 
@@ -858,6 +885,7 @@ input[type="submit"]:hover {
   }
 
   .footer-row3 {
+    -ms-flex-direction: row;
     flex-direction: row;
     align-items: flex-end;
     gap: 5rem;
@@ -877,6 +905,7 @@ input[type="submit"]:hover {
 
   .navigation-layout {
     padding: 3rem 5rem;
+    -ms-grid-columns: repeat(3 1fr);
     grid-template-columns: repeat(3 1fr);
     grid-template-areas:
       "social logo contact"
@@ -891,13 +920,16 @@ input[type="submit"]:hover {
   }
 
   .header-row2 {
+    -ms-flex-direction: row;
     flex-direction: row;
     max-width: 940px;
     margin: 0 auto;
   }
 
   .hero-form-layout {
+    -ms-grid-columns: repeat(2 1fr);
     grid-template-columns: repeat(2 1fr);
+    -ms-grid-rows: repeat(3 1fr);
     grid-template-rows: repeat(3 1fr);
     grid-template-areas:
       "name phone"
@@ -908,7 +940,9 @@ input[type="submit"]:hover {
   }
 
   .form-layout {
+    -ms-grid-columns: repeat(4 1fr);
     grid-template-columns: repeat(4 1fr);
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
       "name phone message submit"
